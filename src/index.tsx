@@ -82,6 +82,7 @@ export interface ImageStyle extends FlexStyle, TransformsStyle, ShadowStyleIOS {
 export interface FastImageProps extends AccessibilityProps {
     source: Source | number
     resizeMode?: ResizeMode
+    resizeImageAndroid?: ResizeImageAndroid
     fallback?: boolean
 
     onLoadStart?(): void
@@ -126,6 +127,11 @@ export interface FastImageProps extends AccessibilityProps {
      * Render children within the image.
      */
     children?: React.ReactNode
+}
+
+export type ResizeImageAndroid = {
+    width: number
+    height: number
 }
 
 function FastImageBase({
